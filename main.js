@@ -1,33 +1,60 @@
-var person1 = {
-    name: 'Igor',
-    age: 20,
-    married: true,
-    children: 0
-};
-var person2 = {
-    name: 'Sonya',
-    age: 25,
-    married: false,
-    children: 0
-};
-var person3 = {
-    name: 'Sam',
-    age: 35,
-    married: true,
-    children: 1
-};
+var car = {
+    name: 'Mercedes',
+    model: 'GL450',
+    engine: 4.0,
+    year: 2015,
+    color: 'black',
+    hp: 300,
+}
 
-var names = person1.name + ',' + person2.name + ',' + person3.name;
-alert('Имена всех сотрудников - ' + '' + names);
+// task1
+if (car.name === 'Mercedes' && car.model === 'GL450') {
+    alert('Мой любимый мерседес!')
+} else {
+    alert('Это -' + car.name + ' ' + car.model)
+}
 
-var averageAge = (person1.age, + person2.age, + person3.age) / 3;
-alert('Средний возраст сотрудников ' + averageAge);
+// task2
+var carYear = 2021 - car.year;
 
-var atLeastOneMarried = person1.married || person2.married || person3.married;
-alert(atLeastOneMarried);
+if (carYear == 0) {
+    alert('Новый автомобиль');
+} else if (carYear <= 2) {
+    alert('Свежий автомобиль');
+} else if (carYear > 2) {
+    alert('Лет этому авто:' + ' ' + carYear);
+} else {
+    alert('Советую выбрать другой автомобиль');
+}
 
-var allYoungerThanForty = person1.age < 40 && person2.age < 40 && person3.age < 40;
-alert(allYoungerThanForty);
+// task3
+var consumption = resultCarEngine;
+    
+var resultCarEngine = (car.engine >= 3.0) ? alert('Прожорливый автомобиль') : alert('Экономичный автомобиль');
 
-var atLeastOneHasNoChildren = person1.children == 0 || person2.children == 0 || person3.children == 0;
-alert(atLeastOneHasNoChildren);
+// task4
+var russianColor = car.color;
+switch (russianColor) {
+    case 'black':
+        alert('черный')
+        break;
+     case 'silver':
+        alert('серебристый')
+        break;
+    case 'red':
+        alert('красный')
+        break;
+    case 'white':
+        alert('белый')
+        break;
+    case 'gray':
+        alert('серый')
+        break;
+    case 'blue':
+        alert('синий')
+        break;
+    default:
+        alert('Невозможно определить цвет автомобиля')
+        break;
+    
+}
