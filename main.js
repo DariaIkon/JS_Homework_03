@@ -28,33 +28,33 @@ if (carYear == 0) {
 }
 
 // task3
-var consumption = resultCarEngine;
-    
-var resultCarEngine = (car.engine >= 3.0) ? alert('Прожорливый автомобиль') : alert('Экономичный автомобиль');
+var consumption = (car.engine >= 3.0) ? 'Прожорливый автомобиль' : 'Экономичный автомобиль';
+alert(consumption);
 
 // task4
-var russianColor = car.color;
-switch (russianColor) {
+
+var russianColor = '';
+switch (car.color) {
     case 'black':
-        alert('черный')
+        var russianColor = 'черный'
         break;
      case 'silver':
-        alert('серебристый')
+        var russianColor = 'серебристый'
         break;
     case 'red':
-        alert('красный')
+        var russianColor = 'красный'
         break;
     case 'white':
-        alert('белый')
+        var russianColor = 'белый'
         break;
     case 'gray':
-        alert('серый')
+        var russianColor = 'серый'
         break;
     case 'blue':
-        alert('синий')
+        var russianColor = 'синий'
         break;
     default:
-        alert('Невозможно определить цвет автомобиля')
-        break;
-    
+        var russianColor = 'Невозможно определить цвет автомобиля'
+        break;   
 }
+alert(russianColor);
