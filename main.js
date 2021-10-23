@@ -1,55 +1,97 @@
 // task_1
 
-var mathClassPersons = [
-    {
-    name: 'Алексей Попов',
-    class: 7,
-    marks: [2, 4, 3, 4, 2, 3, 3, 5, 4, 1]
-    },
-    {
-    name: 'Иван Петросян',
-    class: 6,
-    marks: [3, 2, 4, 4, 3, 5, 5, 5]
-    },
-    {
-    name: 'Василий Караванов',
-    class: 8,
-    marks: [1, 2, 2, 1, 4, 3, 3, 2]
+var iphone = {
+    name: 'iphone',
+    model: 12,
+    color: 'silver',
+    year: 2020,
+    price: 900
+}
+var sony = {
+    name: 'Sony',
+    model: 'Xperia 1',
+    color: 'green',
+    year: 2019,
+    price: 1600
+}
+var huawei = {
+    name: 'huawei',
+    model: 'nowa-8-i',
+    color: 'pink',
+    year: 2018,
+    price: 700
+}
+var samsung = {
+    name: 'Samsung',
+    model: 'Galaxy S13',
+    color: 'black',
+    year: 2021,
+    price: 1300
+}
+var nokia = {
+    name: 'Xiaomi',
+    model: 'Soft X',
+    color: 'white',
+    year: 2020,
+    price: 200
+}
+
+function showModel(object) {
+    return object.name + ' ' + object.model + ' ' + object.year
+}
+
+alert(showModel(iphone));
+alert(showModel(samsung));
+alert(showModel(nokia));
+
+// // task_2
+
+function getColor(object) {
+    var colorPhone = '';
+    switch (object.color) {
+        case 'white':
+         colorPhone = 'белый'
+        break;
+    case 'silver':
+         colorPhone = 'серый'
+        break;
+    case 'black':
+         colorPhone = 'черный'
+        break;
+    default:
+         colorPhone = 'Невозможно определить цвет телефона'
+        break;   
     }
-]
+    return colorPhone;
+}
+alert(getColor(iphone));
+alert(getColor(samsung));
+alert(getColor(nokia));
 
-console.log(mathClassPersons[0]);
-console.log(mathClassPersons[1]);
-console.log(mathClassPersons[2]);
 
-// task_2
+// // task_3 
 
-mathClassPersons.push({
-    
-    name: 'Виталий Абрамов',
-    class: 7,
-    marks: [3, 3, 2, 3, 4, 3]
-    
-})
+function canBuy(object, cash) {
+    if (cash >= object.price) {
+    alert(object.name + ' ' + object.model + ' ' + 'у вас достаточно средств для совершения покупки!')
+    } else {
+        alert(object.name + ' ' + object.model + ' ' + 'у вас не достаточно средств для совершения покупки!')
+}
+}
+canBuy(iphone, 800);
+canBuy(samsung, 1700);
+canBuy(nokia, 300);
+canBuy(huawei, 700);
+canBuy(sony, 800);
 
-console.log(mathClassPersons[3]);
-
-// task_3
-
-mathClassPersons[2].marks.push(5);
-console.log(mathClassPersons[2].marks);
 
 // task_4
-mathClassPersons[0].marks.pop();
-console.log(mathClassPersons[0].marks);
 
-// task_5
-var rating = mathClassPersons[2].marks.length;
-var message = 'У Василия ' + rating + ' оценок';
-console.log(message);
+function showInfo(object) {
+    var colorPhone = getColor(object);
+    return object.name + ' ' + object.model + ' ' + colorPhone;
+}
 
-// task_6
-var nameSecondPerson = mathClassPersons[1].name.toUpperCase();
-var classSecondPerson = mathClassPersons[1].class;
-var messageForSecondPerson = nameSecondPerson + ' сейчас в ' + classSecondPerson + ' классе';
-console.log(messageForSecondPerson);
+alert(showInfo(iphone));
+alert(showInfo(samsung));
+alert(showInfo(nokia));
