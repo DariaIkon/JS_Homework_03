@@ -40,48 +40,49 @@ function showModel(object) {
     return object.name + ' ' + object.model + ' ' + object.year
 }
 
-// alert(showModel(iphone));
-// alert(showModel(samsung));
-// alert(showModel(nokia));
+alert(showModel(iphone));
+alert(showModel(samsung));
+alert(showModel(nokia));
 
 // // task_2
 
 function getColor(object) {
+    var colorPhone = '';
     switch (object.color) {
         case 'white':
-         alert('белый')
+         colorPhone = 'белый'
         break;
     case 'silver':
-         alert('серый')
+         colorPhone = 'серый'
         break;
     case 'black':
-         alert('черный')
+         colorPhone = 'черный'
         break;
     default:
-         alert('Невозможно определить цвет автомобиля')
+         colorPhone = 'Невозможно определить цвет телефона'
         break;   
     }
-    return;
+    return colorPhone;
 }
-// getColor(iphone);
-// getColor(samsung);
-// getColor(nokia);
+alert(getColor(iphone));
+alert(getColor(samsung));
+alert(getColor(nokia));
 
 
 // // task_3 
 
 function canBuy(object, cash) {
-    if (cash >= 1300) {
+    if (cash >= object.price) {
     alert(object.name + ' ' + object.model + ' ' + 'у вас достаточно средств для совершения покупки!')
     } else {
         alert(object.name + ' ' + object.model + ' ' + 'у вас не достаточно средств для совершения покупки!')
 }
 }
-// canBuy(iphone, iphone.price);
-// canBuy(samsung, samsung.price);
-// canBuy(nokia, nokia.price);
-// canBuy(huawei, huawei.price);
-// canBuy(sony, sony.price);
+canBuy(iphone, 800);
+canBuy(samsung, 1700);
+canBuy(nokia, 300);
+canBuy(huawei, 700);
+canBuy(sony, 800);
 
 
 // task_4
