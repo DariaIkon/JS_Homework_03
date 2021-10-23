@@ -1,60 +1,96 @@
-var car = {
-    name: 'Mercedes',
-    model: 'GL450',
-    engine: 4.0,
-    year: 2015,
+// task_1
+
+var iphone = {
+    name: 'iphone',
+    model: 12,
+    color: 'silver',
+    year: 2020,
+    price: 900
+}
+var sony = {
+    name: 'Sony',
+    model: 'Xperia 1',
+    color: 'green',
+    year: 2019,
+    price: 1600
+}
+var huawei = {
+    name: 'huawei',
+    model: 'nowa-8-i',
+    color: 'pink',
+    year: 2018,
+    price: 700
+}
+var samsung = {
+    name: 'Samsung',
+    model: 'Galaxy S13',
     color: 'black',
-    hp: 300,
+    year: 2021,
+    price: 1300
+}
+var nokia = {
+    name: 'Xiaomi',
+    model: 'Soft X',
+    color: 'white',
+    year: 2020,
+    price: 200
 }
 
-// task1
-if (car.name === 'Mercedes' && car.model === 'GL450') {
-    alert('Мой любимый мерседес!')
-} else {
-    alert('Это -' + car.name + ' ' + car.model)
+function showModel(object) {
+    return object.name + ' ' + object.model + ' ' + object.year
 }
 
-// task2
-var carYear = 2021 - car.year;
+// alert(showModel(iphone));
+// alert(showModel(samsung));
+// alert(showModel(nokia));
 
-if (carYear == 0) {
-    alert('Новый автомобиль');
-} else if (carYear <= 2) {
-    alert('Свежий автомобиль');
-} else if (carYear > 2) {
-    alert('Лет этому авто:' + ' ' + carYear);
-} else {
-    alert('Советую выбрать другой автомобиль');
-}
+// // task_2
 
-// task3
-var consumption = (car.engine >= 3.0) ? 'Прожорливый автомобиль' : 'Экономичный автомобиль';
-alert(consumption);
-
-// task4
-
-var russianColor = '';
-switch (car.color) {
+function getColor(object) {
+    switch (object.color) {
+        case 'white':
+         alert('белый')
+        break;
+    case 'silver':
+         alert('серый')
+        break;
     case 'black':
-        var russianColor = 'черный'
-        break;
-     case 'silver':
-        var russianColor = 'серебристый'
-        break;
-    case 'red':
-        var russianColor = 'красный'
-        break;
-    case 'white':
-        var russianColor = 'белый'
-        break;
-    case 'gray':
-        var russianColor = 'серый'
-        break;
-    case 'blue':
-        var russianColor = 'синий'
+         alert('черный')
         break;
     default:
-        var russianColor = 'Невозможно определить цвет автомобиля'
+         alert('Невозможно определить цвет автомобиля')
         break;   
+    }
+    return;
 }
-alert(russianColor);
+// getColor(iphone);
+// getColor(samsung);
+// getColor(nokia);
+
+
+// // task_3 
+
+function canBuy(object, cash) {
+    if (cash >= 1300) {
+    alert(object.name + ' ' + object.model + ' ' + 'у вас достаточно средств для совершения покупки!')
+    } else {
+        alert(object.name + ' ' + object.model + ' ' + 'у вас не достаточно средств для совершения покупки!')
+}
+}
+// canBuy(iphone, iphone.price);
+// canBuy(samsung, samsung.price);
+// canBuy(nokia, nokia.price);
+// canBuy(huawei, huawei.price);
+// canBuy(sony, sony.price);
+
+
+// task_4
+
+function showInfo(object) {
+    var colorPhone = getColor(object);
+    return object.name + ' ' + object.model + ' ' + colorPhone;
+}
+
+alert(showInfo(iphone));
+alert(showInfo(samsung));
+alert(showInfo(nokia));
