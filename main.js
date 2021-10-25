@@ -1,97 +1,78 @@
+
+var students = [
+    {
+        firstName: 'Александр',
+        lastName: 'Иванчук',
+        group: 'T993',
+        marks: [2, 4, 4, 5, 2, 3, 3, 4, 5, 3, 2, 4, 3]
+    },
+    {
+        firstName: 'Анатолий',
+        lastName: 'Косанов',
+        group: 'T993',
+        marks: [3, 4, 5, 4, 4, 1, 4, 3, 4, 4, 4, 3, 5]
+    },
+    {
+        firstName: 'Руслан',
+        lastName: 'Столбов',
+        group: 'T993',
+        marks: [3, 3, 5, 4, 4, 1, 4, 4, 3, 5, 4, 4, 4]
+    },
+    {
+        firstName: 'Иван',
+        lastName: 'Пробкин',
+        group: 'T994',
+        marks: [2, 3, 2, 1, 2, 3, 2, 3, 3, 3, 4, 1, 1]
+    },
+    {
+        firstName: 'Владислав',
+        lastName: 'Голубев',
+        group: 'T994',
+        marks: [1, 2, 2, 2, 3, 2, 2, 3, 5, 1, 2, 3, 2]
+    }
+
+]
+
 // task_1
-
-var iphone = {
-    name: 'iphone',
-    model: 12,
-    color: 'silver',
-    year: 2020,
-    price: 900
+function fullName(object) {
+    var firstNameStudent = object.firstName;
+    var lastNameStudent = object.lastName;
+    return firstNameStudent + ' ' + lastNameStudent;
 }
-var sony = {
-    name: 'Sony',
-    model: 'Xperia 1',
-    color: 'green',
-    year: 2019,
-    price: 1600
-}
-var huawei = {
-    name: 'huawei',
-    model: 'nowa-8-i',
-    color: 'pink',
-    year: 2018,
-    price: 700
-}
-var samsung = {
-    name: 'Samsung',
-    model: 'Galaxy S13',
-    color: 'black',
-    year: 2021,
-    price: 1300
-}
-var nokia = {
-    name: 'Xiaomi',
-    model: 'Soft X',
-    color: 'white',
-    year: 2020,
-    price: 200
-}
-
-function showModel(object) {
-    return object.name + ' ' + object.model + ' ' + object.year
-}
-
-alert(showModel(iphone));
-alert(showModel(samsung));
-alert(showModel(nokia));
+// console.log(fullName(students[0]));
 
 // // task_2
 
-function getColor(object) {
-    var colorPhone = '';
-    switch (object.color) {
-        case 'white':
-         colorPhone = 'белый'
-        break;
-    case 'silver':
-         colorPhone = 'серый'
-        break;
-    case 'black':
-         colorPhone = 'черный'
-        break;
-    default:
-         colorPhone = 'Невозможно определить цвет телефона'
-        break;   
+function getAverageMark(object) {
+    var sum = 0;
+    for (var i = 0; i < object.length; i++){
+        
+        sum += object[i];
+               
     }
-    return colorPhone;
+    var result = (sum / object.length).toFixed(1);
+    return result;
 }
-alert(getColor(iphone));
-alert(getColor(samsung));
-alert(getColor(nokia));
 
+// console.log(getAverageMark(students[0].marks));
 
-// // task_3 
+// task_3
 
-function canBuy(object, cash) {
-    if (cash >= object.price) {
-    alert(object.name + ' ' + object.model + ' ' + 'у вас достаточно средств для совершения покупки!')
-    } else {
-        alert(object.name + ' ' + object.model + ' ' + 'у вас не достаточно средств для совершения покупки!')
+function processStudents(object) {
+    // for (var i of object) {
+    //     return message = 'Студент ' + fullName(i) + ' имеет средний балл ' + getAverageMark(i) + ' и учится в группе ' + i.group;
+    // }
+
+    object.forEach(function (item) {
+        
+        var message = 'Студент ' + fullName(item) + ' имеет средний балл ' + getAverageMark(item.marks) + ' и учится в группе ' + item.group;
+        
+
+        console.log(message);
+        
+    } );
+
+    
 }
-}
-canBuy(iphone, 800);
-canBuy(samsung, 1700);
-canBuy(nokia, 300);
-canBuy(huawei, 700);
-canBuy(sony, 800);
-
-
 // task_4
-
-function showInfo(object) {
-    var colorPhone = getColor(object);
-    return object.name + ' ' + object.model + ' ' + colorPhone;
-}
-
-alert(showInfo(iphone));
-alert(showInfo(samsung));
-alert(showInfo(nokia));
+console.log(processStudents(students));
