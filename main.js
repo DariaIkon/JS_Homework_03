@@ -17,25 +17,20 @@ if (confirm('Применить скидку?') == true) {
     client.discount = discount;
 }
 
-const ggg = {
-    name: 'Darya',
-    phone: '+79657074484',
-    email: 'ikonnikova.daria@gmail.com',
-    country: 'Russia',
-    city: 'Kaluga',
-    date: '08.02.1990'
-}
+let showClient = (object) => {
+    console.log('ФИО ' + object.name);
+   console.log('Телефон ' + object.phone); 
+    console.log('Электронная почта ' + object.email);
+    console.log('Страна ' + object.country);
+    console.log('Город ' + object.city);
+    console.log('Дата рождения ' + object.date);
+    if (confirm('Применить скидку?') === true) {
+        console.log('Размер скидки ' + object.discount)
+    };
+    
+};
 
-let showClient = ((object) => {
-    'ФИО ' + object.name;
-    'Телефон ' + object.phone;
-    'Электронная почта ' + object.email;
-    'Страна ' + object.country;
-    'Город' + object.city;
-    'Дата рождения ' + object.date;
-    'Размер скидки ' + object.discount;
-}, 2000);
-showClient(ggg);
+showClient(client);
 console.log(showClient);
 
 
@@ -45,4 +40,4 @@ try {
     console.log('Вызвана функция без параметров');
 }
 
-// console.log(client);
+
