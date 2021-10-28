@@ -1,78 +1,48 @@
+let client = {};
 
-var students = [
-    {
-        firstName: 'Александр',
-        lastName: 'Иванчук',
-        group: 'T993',
-        marks: [2, 4, 4, 5, 2, 3, 3, 4, 5, 3, 2, 4, 3]
-    },
-    {
-        firstName: 'Анатолий',
-        lastName: 'Косанов',
-        group: 'T993',
-        marks: [3, 4, 5, 4, 4, 1, 4, 3, 4, 4, 4, 3, 5]
-    },
-    {
-        firstName: 'Руслан',
-        lastName: 'Столбов',
-        group: 'T993',
-        marks: [3, 3, 5, 4, 4, 1, 4, 4, 3, 5, 4, 4, 4]
-    },
-    {
-        firstName: 'Иван',
-        lastName: 'Пробкин',
-        group: 'T994',
-        marks: [2, 3, 2, 1, 2, 3, 2, 3, 3, 3, 4, 1, 1]
-    },
-    {
-        firstName: 'Владислав',
-        lastName: 'Голубев',
-        group: 'T994',
-        marks: [1, 2, 2, 2, 3, 2, 2, 3, 5, 1, 2, 3, 2]
-    }
+client.name = prompt('Ваше имя?');
+client.phone = prompt('Ваш телефон?');
+client.email = prompt('Ваш email?');
+client.country = prompt('Ваша страна?');
+client.city = prompt('Ваш город?');
+client.date = prompt('Введите дату рождения в формате ДД.ММ.ГГГГ')
 
-]
 
-// task_1
-function fullName(object) {
-    var firstNameStudent = object.firstName;
-    var lastNameStudent = object.lastName;
-    return firstNameStudent + ' ' + lastNameStudent;
-}
-// console.log(fullName(students[0]));
+var date = new Date(client.date);
 
-// // task_2
 
-function getAverageMark(object) {
-    var sum = 0;
-    for (var i = 0; i < object.length; i++){
-        
-        sum += object[i];
-               
-    }
-    var result = (sum / object.length).toFixed(1);
-    return result;
+if (confirm('Применить скидку?') == true) {
+   let discount =  prompt('Какой размер скидки вы хотите?');
+
+    client.discount = discount;
 }
 
-// console.log(getAverageMark(students[0].marks));
-
-// task_3
-
-function processStudents(object) {
-    // for (var i of object) {
-    //     return message = 'Студент ' + fullName(i) + ' имеет средний балл ' + getAverageMark(i) + ' и учится в группе ' + i.group;
-    // }
-
-    object.forEach(function (item) {
-        
-        var message = 'Студент ' + fullName(item) + ' имеет средний балл ' + getAverageMark(item.marks) + ' и учится в группе ' + item.group;
-        
-
-        console.log(message);
-        
-    } );
-
-    
+const ggg = {
+    name: 'Darya',
+    phone: '+79657074484',
+    email: 'ikonnikova.daria@gmail.com',
+    country: 'Russia',
+    city: 'Kaluga',
+    date: '08.02.1990'
 }
-// task_4
-console.log(processStudents(students));
+
+let showClient = ((object) => {
+    'ФИО ' + object.name;
+    'Телефон ' + object.phone;
+    'Электронная почта ' + object.email;
+    'Страна ' + object.country;
+    'Город' + object.city;
+    'Дата рождения ' + object.date;
+    'Размер скидки ' + object.discount;
+}, 2000);
+showClient(ggg);
+console.log(showClient);
+
+
+try {
+    showClient();
+} catch (e) {
+    console.log('Вызвана функция без параметров');
+}
+
+// console.log(client);
