@@ -8,13 +8,11 @@ client.city = prompt('Ваш город?');
 client.date = prompt('Введите дату рождения в формате ДД.ММ.ГГГГ')
 
 
-var date = new Date(client.date);
+client.date = new Date(client.date);
 
 
 if (confirm('Применить скидку?') == true) {
-   let discount =  prompt('Какой размер скидки вы хотите?');
-
-    client.discount = discount;
+   client.discount =  prompt('Какой размер скидки вы хотите?');
 }
 
 let showClient = (object) => {
@@ -24,7 +22,7 @@ let showClient = (object) => {
     console.log('Страна ' + object.country);
     console.log('Город ' + object.city);
     console.log('Дата рождения ' + object.date);
-    if (confirm('Применить скидку?') === true) {
+    if (object.discount >= 0) {
         console.log('Размер скидки ' + object.discount)
     };
     
@@ -37,6 +35,7 @@ console.log(showClient);
 try {
     showClient();
 } catch (e) {
+    console.log(e.message);
     console.log('Вызвана функция без параметров');
 }
 
